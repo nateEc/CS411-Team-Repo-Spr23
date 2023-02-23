@@ -1,7 +1,7 @@
 # CS411-Team-Repo-Spr23
 
 ## Idea 1
-###scheduler 
+### Scheduler 
 Take in user’s regular calendar → including classes and other events (daily schedule)
 They should be able to add events that they would like to do
 Either sometime during the day/week/month
