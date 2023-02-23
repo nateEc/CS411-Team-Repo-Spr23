@@ -27,7 +27,7 @@ https://github.com/toddmotto/public-apis
 ## idea 2
 ###personality test and movie recommendations 
 User takes a quiz and using personality test api (for movies) and we match their personality result types to movie types of those similar types of genres giving them a recommendation list sorted by percentage of what is most like their personality type
-###apis
+### apis
 https://app.traitify.com/developer/movies 
 https://www.themoviedb.org/documentation/api 
 https://tastedive.com/read/api 
