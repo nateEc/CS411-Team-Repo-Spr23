@@ -9,10 +9,15 @@ Where they need to go for it
 …
 After list of event they need to do is added we include thoses tasks into their calendar
 Based on weather forecasts, travel time, <other factors here> we fit those events into their calendar
+<br>
 https://developers.google.com/calendar/api/guides/overview
+ <br>
 https://icalendar.readthedocs.io/en/latest/api.html
+ <br>
 https://github.com/toddmotto/public-apis#calendar
+ <br>
 https://github.com/toddmotto/public-apis#weather
+ <br>
 https://docs.traveltime.com/api/overview/introduction 
-
+<br>
 https://github.com/toddmotto/public-apis 
