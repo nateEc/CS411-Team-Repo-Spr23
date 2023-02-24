@@ -31,3 +31,12 @@ User takes a quiz and using personality test api (for movies) and we match their
 https://app.traitify.com/developer/movies 
 https://www.themoviedb.org/documentation/api 
 https://tastedive.com/read/api 
+
+
+## Idea 3
+### Travel Planning Tool
+User inputs the location they want to go to and the days they want to go there. The web app will gather information about best possible means of travel, such as flights, cars, etc. In addition, it will also help you find a place to stay at a hotel near the location where you want to go.
+### API's
+https://www.partners.skyscanner.net/affiliates/travel-apis
+https://pricelinepartnernetwork.com/world-class-api
+https://rapidapi.com/collection/travel-api
