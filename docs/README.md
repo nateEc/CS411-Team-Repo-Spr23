@@ -37,6 +37,9 @@ https://tastedive.com/read/api
 ### Travel Planning Tool
 User inputs the location they want to go to and the days they want to go there. The web app will gather information about best possible means of travel, such as flights, cars, etc. In addition, it will also help you find a place to stay at a hotel near the location where you want to go.
 ### API's
+ <br>
 https://www.partners.skyscanner.net/affiliates/travel-apis
+ <br>
 https://pricelinepartnernetwork.com/world-class-api
+ <br>
 https://rapidapi.com/collection/travel-api
