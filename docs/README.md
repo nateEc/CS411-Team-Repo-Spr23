@@ -2,44 +2,38 @@
 
 ## Idea 1
 ### Scheduler 
-Take in user’s regular calendar → including classes and other events (daily schedule)
-They should be able to add events that they would like to do
-Either sometime during the day/week/month
-Include the amount of time they think it would take
-Where they need to go for it
-…
-After list of event they need to do is added we include thoses tasks into their calendar
-Based on weather forecasts, travel time, <other factors here> we fit those events into their calendar
+Take in user’s regular calendar (This includes classes and other events that are usually in their daily schedule)
+They will be able to add events that they would like to do, and they can include:
+ - If it's something they want to do within the day/week/month
+ - Include the amount of time they think it will take
+ - Where they need to go for it
+
+After list of event they need to do is added we include thoses tasks into their calendar.
+
+Based on weather forecasts, travel time, and other factors -- we will fit those events into their calendar
+
 ### Apis
 <br>
-https://developers.google.com/calendar/api/guides/overview
+Google Calendar: https://developers.google.com/calendar/api/guides/overview
  <br>
-https://icalendar.readthedocs.io/en/latest/api.html
+Apple Calendar: https://icalendar.readthedocs.io/en/latest/api.html
  <br>
-https://github.com/toddmotto/public-apis#calendar
+7Timer Weather: http://www.7timer.info/doc.php?lang=en#introduction
  <br>
-https://github.com/toddmotto/public-apis#weather
- <br>
-https://docs.traveltime.com/api/overview/introduction 
+Travel Time: https://docs.traveltime.com/api/overview/introduction 
+
+## Idea 2
+### Personality Test and Movie Recommendations 
+User takes a quiz and using personality test api -- specifically the movie traits one (includes Believer, Dramatic, Indie, Laughaholic, NailBiter, Romantic, and Stunt Double).
+
+Based on their results, we match their personality result types to movie types of similar genres.
+We'll give them a recommendation list sorted by percentage of what is most like their personality type.
+
+We can even give them similar reccomendation based on the movie that they match with, with other types of media, such as tv shows, music, games, and books.
+### Apis
 <br>
-https://github.com/toddmotto/public-apis 
-
-## idea 2
-### personality test and movie recommendations 
-User takes a quiz and using personality test api (for movies) and we match their personality result types to movie types of those similar types of genres giving them a recommendation list sorted by percentage of what is most like their personality type
-### apis
-https://app.traitify.com/developer/movies 
-https://www.themoviedb.org/documentation/api 
-https://tastedive.com/read/api 
-
-
-## Idea 3
-### Travel Planning Tool
-User inputs the location they want to go to and the days they want to go there. The web app will gather information about best possible means of travel, such as flights, cars, etc. In addition, it will also help you find a place to stay at a hotel near the location where you want to go.
-### API's
+Movie Trait Personality Test: https://app.traitify.com/developer/movies 
  <br>
-https://www.partners.skyscanner.net/affiliates/travel-apis
+Movie Database: https://www.themoviedb.org/documentation/api 
  <br>
-https://pricelinepartnernetwork.com/world-class-api
- <br>
-https://rapidapi.com/collection/travel-api
+Movie Recs to Other Recs: https://tastedive.com/read/api 
