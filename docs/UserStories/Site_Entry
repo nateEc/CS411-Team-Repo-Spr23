@@ -1,1 +1,2 @@
-The first thing a user will see upon entering the site, if they are not already logged in, is the main page. If already logged in, a user will be automatically redirected to their account overview page.
+The first thing a user will see upon entering the site, if they are not already logged in, is the main page.
+If already logged in, a user will be automatically redirected to their account overview page.

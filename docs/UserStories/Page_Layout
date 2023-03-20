@@ -1,3 +1,7 @@
-Users will be shown the name of the web application on top in bold and then followed by a short paragraph explaining what the website does. Under this body of text there will be a login button that the user can click on to be redirected to a login page. The main page may also include an image and title of the top 3 movies recommended by the app across all users.
+Users will be shown the name of the web application on top in bold and then followed by a short paragraph explaining what the website does.
+Under this body of text there will be a login button that the user can click on to be redirected to a login page.
+The main page may also include an image and title of the top 3 movies recommended by the app across all users.
 
-If the user is logged in they will be able to see their name User name in top right corner, if they are not logged in, they will see an option to login which will redirect them to the login page. This will be in a header bar containing relevant information, such as the site name and logo.
+If the user is logged in they will be able to see their name User name in top right corner.
+If they are not logged in, they will see an option to login which will redirect them to the login page.
+This will be in a header bar containing relevant information, such as the site name and logo.
