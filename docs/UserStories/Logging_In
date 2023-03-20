@@ -1,0 +1,1 @@
+A user will be able to log in from the landing page (site entry), by clicking on one of the login buttons. The user will then be prompted to select a 3rd party service to authenticate themselves, and authorize through that external system. Upon a successful log-in a user will be redirected to their account overview. 
