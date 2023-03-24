@@ -7,7 +7,8 @@ They will be able to add events that they would like to do, and they can include
  - If it's something they want to do within the day/week/month
  - Include the amount of time they think it will take
  - Where they need to go for it
-
+ 
+ 
 After list of event they need to do is added we include thoses tasks into their calendar.
 
 Based on weather forecasts, travel time, and other factors -- we will fit those events into their calendar
