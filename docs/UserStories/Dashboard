@@ -1,3 +1,16 @@
+As a returning user, I want to be able to easily access all the available features of the site, so that I can quickly get to the
+information I need without having to search around the site. A potential problem I am concerned with is if I find myself having to
+navigate through multiple pages and menus just to get to the page I need, which wastes my time and is frustrating. I would like to
+see all the available features integrated into one place, such as a dashboard, so that I can quickly and easily access everything
+I need. This dashboard should have clear and easy-to-understand icons or buttons for each feature, so that I can quickly find and
+use the functionality I need. For example, I should be able to start a new quiz, view my past quiz results, and view recommended
+movie titles, all from the dashboard. This will save me time and make the site more user-friendly. I want the site to provide me
+with an intuitive and straightforward user experience, so that I can easily find the information I need and use the site's features
+to their fullest potential. I don't want to waste time searching for the features I need, so having everything integrated in one
+place will make my experience much more enjoyable and efficient.
+
+In the account overview, a user that is logged in will be able to simultaneously view all available options to them, including
+starting a new quiz, viewing relative results, and viewing a comprehensive history of their test results.
 In the account overview, a user that is logged in will be able to
 simultaneously view all available options to them, including starting a
 new quiz, and viewing a comprehensive history of their test results.

@@ -1,0 +1,12 @@
+As a returning user, I want to be able to access my previous quiz results in a logical and easy manner. I want the site to provide
+me with a clear and chronological list of all my previous quiz results on my dashboard page, so I can quickly review my past recommendations
+without having to search for them. I want each summary on the list to include the date of the quiz, the quiz title, and a brief summary
+of the results. When I click on a summary, I want the site to bring me to a page with more detailed information about the quiz, including
+a list of the recommended movies and the personality traits that led to those recommendations. I want this page to be easy to read and navigate,
+with clear headings and a well-organized layout. After I have finished reviewing my previous quiz results, I want to be able to easily navigate
+back to my dashboard page, so that I can continue using the site. I want the site to provide a clear and easy-to-use navigation menu that
+allows me to quickly switch between different pages and features, without having to go back to the homepage every time.
+
+In the Dashboard, a user is able to view a list of summaries of their previous quiz results, in chronological order, combined into the
+dashboard with all the other useful elements the user may want. A more detailed view of each result can be viewed through interacting
+with that particular listing.

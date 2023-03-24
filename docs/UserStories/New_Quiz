@@ -1,4 +1,13 @@
+I want to take a personality quiz to receive movie recommendations that fit my personality. I want the quiz to present me
+with image/personality trait pairs, and allow me to indicate whether the pair describes me or not. I want to be able to
+complete the quiz quickly and easily, and receive my recommendations immediately after completing the quiz.
+
+After the user clicks to begin a new quiz  they will be able to start up a new personality quiz. The quiz will make use
+of the Traitify API to present an image/personality trait pair, which a user will be able to indicate as either descriptive
+of them, or not. Upon selecting one of these options, a user is presented a new question in the same style, until the
+completion of the test. After the user is done with the quiz, they will be redirected to the view results page.
 After the user clicks to begin a new quiz they will be able to start up a new personality quiz instance.
-The quiz will make use of the Traitify API to present an image/personality trait pair, which a user will be able to indicate as either descriptive of them, or not.
+The quiz will make use of the Traitify API to present an image/personality trait pair, which a user will be able to indicate
+as either descriptive of them, or not.
 Upon selecting one of these options, a user is presented a new question in the same style, until the completion of the test.
 After the user is done with the quiz, they will be redirected to the view results page.

@@ -1,3 +1,14 @@
+As a new user, I want to understand the purpose of the site when I first arrive, and be able to register for an account easily.
+I want the site to provide clear instructions on how to register, what information is required, and how to proceed after
+registration is complete. After completing the necessary steps, I want to be redirected to my account overview page so that
+I can start using the site immediately. Alternatively, as a returning user, I want to sign in to my account quickly and easily.
+I want the site to have a clear login button on the main page and prompt me to select a 3rd party service to authenticate myself.
+After successful login, I want to be immediately redirected to my account overview page so that I can start using the site.
+
+In either case, the process of logging in is identical, with the difference in new and returning users handled by the 3rd party
+authentication story. A user will be able to log in from the landing page (site entry), by clicking on one of the login buttons.
+The user will then be prompted to select a 3rd party service to authenticate themselves, and authorize through that external system.
+Upon a successful log-in a user will be redirected to their account overview. 
 A user will be able to log in from the landing page (site entry), by clicking on one of the login buttons.
 The user will then be prompted to select a 3rd party service to authenticate themselves, and authorize through that external system.
 Upon a successful log-in a user will be redirected to their account overview. 
