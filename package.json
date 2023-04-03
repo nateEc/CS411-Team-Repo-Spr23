@@ -1,0 +1,24 @@
+{
+  "name": "CS411 project",
+  "version": "1.0.0",
+  "description": "Movie Recommendation based on personality test - CS411 Group Project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nateEc/CS411-Team-Repo-Spr23/tree/nate"
+  },
+  "author": "The Net Ninja",
+  "license": "ISC",
+  "homepage": "https://github.com/nateEc/CS411-Team-Repo-Spr23/blob/main/README.md",
+  "dependencies": {
+    "cookie-session": "^1.3.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.1",
+    "mongoose": "^7.0.3",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^2.0.0"
+  }
+}
