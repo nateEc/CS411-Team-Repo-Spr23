@@ -1,3 +1,1 @@
-# CS411-Team-Repo-Spr23
-
-
+Basic Structure for the application with google oauth feature done
