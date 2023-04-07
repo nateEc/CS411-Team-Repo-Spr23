@@ -1,0 +1,57 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title REST Client
+style.
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container {
+        height: 100vh;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    label,
+    input[type="submit"] {
+        margin-top: 20px;
+    }
+.container
+    h1 Simple POST Form
+    form
+        label Movie Input:
+        input#usrinput(type='string')
+        input(type='submit' value='Look Up' id='searchButton')
+    .result Click Button!
+script.
+    searchButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        const query = usrinput.value;
+        const url = `https://api.themoviedb.org/3/search/movie/?api_key=b9ab825c6c7df22351f2927746188d59&query=${query}`;
+        fetch(url)
+            .then((response) => response.json())
+            .then((data) => {
+                result.innerHTML = "";
+                data.results.forEach((result) => {
+                    const li = document.createElement("li");
+                    const title = document.createElement("h2");
+                    const overview = document.createElement("p");
+                    title.textContent = result.title;
+                    overview.textContent = result.overview;
+                    li.appendChild(title);
+                    li.appendChild(overview);
+                    result.appendChild(li);
+                });
+            })
+            .catch((error) => console.error(error));
+    });
