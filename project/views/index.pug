@@ -1,5 +1,57 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
+doctype html
+head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title REST Client
+style.
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container {
+        height: 100vh;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+    label,
+    input[type="submit"] {
+        margin-top: 20px;
+    }
+.container
+    h1 Simple POST Form
+    form
+        label Movie Input:
+        input#usrinput(type='string')
+        input(type='submit' value='Look Up')
+    .result Click Button!
+script.
+    searchButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        const query = searchInput.value;
+        const url = `${SEARCH_URL}?api_key=${API_KEY}&query=${query}`;
+        fetch(url)
+            .then((response) => response.json())
+            .then((data) => {
+                resultsList.innerHTML = "";
+                data.results.forEach((result) => {
+                    const li = document.createElement("li");
+                    const title = document.createElement("h2");
+                    const overview = document.createElement("p");
+                    title.textContent = result.title;
+                    overview.textContent = result.overview;
+                    li.appendChild(title);
+                    li.appendChild(overview);
+                    resultsList.appendChild(li);
+                });
+            })
+            .catch((error) => console.error(error));
+    });
