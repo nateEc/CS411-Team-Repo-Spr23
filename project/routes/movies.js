@@ -6,7 +6,7 @@ router.get('/search/:query', async (req, res) => {
     try {
         const { query } = req.params;
         const response = await fetch(
-            `https://api.themoviedb.org/3/search/movie?api_key=<your_api_key>&query=${query}`
+            `https://api.themoviedb.org/3/search/movie?api_key=b9ab825c6c7df22351f2927746188d59&query=${query}`
         );
         const data = await response.json();
         res.json(data);
