@@ -69,6 +69,34 @@
             color: #2E2E2E;
         }
 
+            .card {
+                width: 200px;
+                height: 300px;
+                border: 1px solid #ddd;
+                margin: 10px;
+                display: inline-block;
+                vertical-align: top;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            }
+
+            /* Style for the movie poster */
+            .card img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+
+            /* Style for the movie title */
+            .card h2 {
+                font-size: 18px;
+                margin: 10px;
+            }
+
+            /* Style for the movie release year */
+            .card p {
+                font-size: 14px;
+                margin: 0 10px 10px 10px;
+            }
         </style>
     </head>
     <body>
@@ -130,11 +158,13 @@
                     li.appendChild(poster);
                     li.appendChild(rating);
                     li.appendChild(overview);
-                    resultsList.appendChild(li);
-
+                    resultsList.appendChild(li)
                 });
                 resultsList.style.display = "flex";
                 resultsList.style.flexDirection = "row";
+                resultsList.style.flexWrap = "wrap";
+                resultsList.style.justifyContent = "center";
+                resultsList.style.alignItems = "center";
                 resultsList.style.listStyle = "none";
                 resultsList.style.margin = "0";
                 resultsList.style.padding = "0";
@@ -143,6 +173,7 @@
                     li.style.width = "220px";
                     li.style.height = "350px";
                     li.style.marginRight = "20px";
+                    li.style.marginBottom = "200px";
                 });
             })
                 .catch((error) => console.error(error));
