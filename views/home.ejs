@@ -7,9 +7,10 @@
             body{
                 font-family: arial;
                 margin: 0;
+                background: #7b7e9e;
             }
             nav{
-                background: #ff5353;
+                background: #6067c2;
                 padding: 20px 10px;
             }
             nav ul{
@@ -50,12 +51,49 @@
                 <li><a href="/profile">Profile</a></li>
             </ul>
         </nav>
-        <header>
-            <h1>Personality Test and Movie Recommendations            </h1>
-            <h2>Homepage</h2>
-        </header>
-        <main>
-            <p>takes a quiz and using personality test api -- specifically the movie traits one (includes Believer, Dramatic, Indie, Laughaholic, NailBiter, Romantic, and Stunt Double). Based on their results, we match their personality result types to movie types of similar genres. We'll give them a recommendation list sorted by percentage of what is most like their personality type.</p>
-        </main>
+        <p> Log in to search for the movies you want!
+        </p>
+        <% if (user) { %>
+        <div class="container">
+            <h1>Simple POST Form</h1>
+            <form>
+                <label for="usrinput">Movie Input:</label>
+                <input id="usrinput" type="string" name="movie">
+                <input type="submit" value="Look Up" id="searchButton">
+            </form>
+            <ul class="result"></ul>
+        </div>
+        <% } else { %>
+        <% } %>
+        <script>
+        let searchButton = document.querySelector("input[type='submit']");
+        searchButton.addEventListener("click", (event) => {
+            event.preventDefault();
+            let searchInput = document.querySelector("#usrinput");
+            const query = searchInput.value;
+            const SEARCH_URL = "https://api.themoviedb.org/3/search/movie?api_key=b9ab825c6c7df22351f2927746188d59&query=$%7Bquery%7D"
+            const API_KEY = "b9ab825c6c7df22351f2927746188d59"
+            const resultsList = document.querySelector(".result");
+            console.log(API_KEY) 
+            console.log(SEARCH_URL)
+            const url = `${SEARCH_URL}?api_key=${API_KEY}&query=${query}`;
+            fetch(url)
+            .then((response) => response.json())
+            .then((data) => {
+                resultsList.innerHTML = "";
+                data.results.forEach((result) => {
+                const li = document.createElement("li");
+                const title = document.createElement("h2");
+                const overview = document.createElement("p");
+                title.textContent = result.title;
+                overview.textContent = result.overview;
+                li.appendChild(title);
+                li.appendChild(overview);
+                resultsList.appendChild(li);
+                });
+            })
+            .catch((error) => console.error(error));
+        });
+        </script>
     </body>
 </html>
