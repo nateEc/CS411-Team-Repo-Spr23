@@ -5,7 +5,7 @@
         <title>Personality test and Movie recommendation</title>
         <style>
             body{
-                font-family: arial;
+                font-family: arial, serif;
                 margin: 0;
                 background: #7b7e9e;
             }
@@ -68,35 +68,65 @@
             background-color: #FFFFFF;
             color: #2E2E2E;
         }
-
             .card {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
                 width: 200px;
-                height: 300px;
-                border: 1px solid #ddd;
-                margin: 10px;
-                display: inline-block;
-                vertical-align: top;
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                height: 500px;
+                border: 3px none #ccc;
+                border-radius: 20px;
+                overflow: hidden;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                margin: 20px 10px;
             }
 
-            /* Style for the movie poster */
             .card img {
                 width: 100%;
-                height: 200px;
-                object-fit: cover;
+                height: 80%;
+                background-size: cover;
+                background-position: center;
+                object-fit: fill;
             }
 
-            /* Style for the movie title */
-            .card h2 {
-                font-size: 18px;
-                margin: 10px;
+            .card-body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                overflow: scroll;
+                width: 100%;
+                height: 40%;
+                padding: 10px;
             }
 
-            /* Style for the movie release year */
-            .card p {
+            .card-title {
+                font-size: 24px;
+                font-weight: bold;
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            .card-summary {
                 font-size: 14px;
-                margin: 0 10px 10px 10px;
+                text-align: left;
+                line-height: 1.5;
+                max-height: 6em;
+                overflow: scroll;
+                text-overflow: ellipsis;
+                overflow-scrolling: auto;
+                white-space: pre-wrap;
+                margin: 10px 0;
             }
+
+            /*.card-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(2, auto);
+                gap: 20px;
+            }*/
+
         </style>
     </head>
     <body>
@@ -126,58 +156,74 @@
         <% } else { %>
         <% } %>
         <script>
+            // move this function elsewhere
+            function createCardElement(title, posterUrl, rating, overview) {
+                const card = document.createElement("div");
+                card.className = "card";
+
+                const poster = document.createElement("img");
+                poster.src = posterUrl;
+                poster.alt = `${title} poster`;
+                poster.className = "card-img-top";
+                card.appendChild(poster);
+
+                const cardBody = document.createElement("div");
+                cardBody.className = "card-body";
+                card.appendChild(cardBody);
+
+                const cardTitle = document.createElement("h2");
+                cardTitle.textContent = title;
+                cardTitle.className = "card-title";
+                cardBody.appendChild(cardTitle);
+
+                const cardText = document.createElement("p");
+                cardText.textContent = `Rating: ${rating}\nSummary: ${overview}`;
+                cardText.className = "card-summary";
+                cardBody.appendChild(cardText);
+
+                return card;
+            }
+
         let searchButton = document.querySelector("input[type='submit']");
-        searchButton.addEventListener("click", (event) => {
+        searchButton.addEventListener("click", (event) => { //searchButton.addEventListener("submit", async (event) => {
             event.preventDefault();
             let searchInput = document.querySelector("#usrinput");
             const query = searchInput.value;
             const SEARCH_URL = "https://api.themoviedb.org/3/search/movie?api_key=b9ab825c6c7df22351f2927746188d59&query=$%7Bquery%7D"
             const API_KEY = "b9ab825c6c7df22351f2927746188d59"
             const resultsList = document.querySelector(".result");
-            console.log(API_KEY) 
+            console.log(API_KEY)
             console.log(SEARCH_URL)
             const url = `${SEARCH_URL}?api_key=${API_KEY}&query=${query}`;
             fetch(url)
-            .then((response) => response.json())
-            .then((data) => {
-                resultsList.innerHTML = "";
+                .then((response) => response.json())
+                .then((data) => {
+                    resultsList.innerHTML = "";
 
-                data.results.slice(0, 8).forEach((result) => {
-                    const li = document.createElement("li");
-                    const title = document.createElement('h2');
-                    const poster = document.createElement('img');
-                    const rating = document.createElement('p');
-                    const overview = document.createElement('p');
-                    title.textContent = result.title;
-                    poster.src = `https://image.tmdb.org/t/p/w200${result.poster_path}`;
-                    poster.alt = `${result.title} poster`;
-                    rating.textContent = `Rating: ${result.vote_average}`;
-                    overview.textContent = `Summary: ${result.overview}`;
+                    data.results.slice(0, 8).forEach((result) => {
+                        const card = createCardElement(
+                            result.title,
+                            `https://image.tmdb.org/t/p/w200${result.poster_path}`,
+                            result.vote_average,
+                            result.overview
+                        );
+                        resultsList.appendChild(card);
+                    });
+                    resultsList.style.display = "flex";
+                    resultsList.style.flexDirection = "row";
+                    resultsList.style.listStyle = "none";
+                    resultsList.style.margin = "0";
+                    resultsList.style.padding = "0";
+                    const liItems = document.querySelectorAll(".result li");
+                    liItems.forEach((li) => {
+                        li.style.width = "220px";
+                        li.style.height = "350px";
+                        li.style.marginRight = "20px";
+                    })
+                    })
+                        .catch((error) => console.error(error));
+                });
 
-                    li.appendChild(title);
-                    li.appendChild(poster);
-                    li.appendChild(rating);
-                    li.appendChild(overview);
-                    resultsList.appendChild(li)
-                });
-                resultsList.style.display = "flex";
-                resultsList.style.flexDirection = "row";
-                resultsList.style.flexWrap = "wrap";
-                resultsList.style.justifyContent = "center";
-                resultsList.style.alignItems = "center";
-                resultsList.style.listStyle = "none";
-                resultsList.style.margin = "0";
-                resultsList.style.padding = "0";
-                const liItems = document.querySelectorAll(".result li");
-                liItems.forEach((li) => {
-                    li.style.width = "220px";
-                    li.style.height = "350px";
-                    li.style.marginRight = "20px";
-                    li.style.marginBottom = "200px";
-                });
-            })
-                .catch((error) => console.error(error));
-        });
         </script>
     </body>
 </html>
