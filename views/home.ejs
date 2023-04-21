@@ -16,11 +16,14 @@
                 <% } %>
                 <li><a href="/">Homepage</a></li>
                 <li><a href="/profile">Profile</a></li>
+                    <% if (user) { %>
                     <form id="form">
                         <label for="usrinput">Movie Input:</label>
                         <input id="usrinput" type="text" name="movie" placeholder="Search">
                         <input type="submit" value="Look Up" id="searchButton">
                     </form>
+                    <% } else { %>
+                    <% } %>
             </ul>
         </nav>
         <h1> Log in to search for the movies you want!
