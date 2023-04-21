@@ -17,16 +17,16 @@
                 <% } %>
                 <li><a href="/">Homepage</a></li>
                 <li><a href="/profile">Profile</a></li>
+                    <form id="form">
+                        <label for="usrinput">Movie Input:</label>
+                        <input id="usrinput" type="text" name="movie" placeholder="Search">
+                        <input type="submit" value="Look Up" id="searchButton">
+                    </form>
             </ul>
         </nav>
         <h1> Log in to search for the movies you want!
         </h1>
         <% if (user) { %>
-            <!-- <header>
-                <form id="form">
-                    <label for="search"></label><input type="text" placeholder="Search" id="search" class="search">
-                </form>
-            </header> -->
             <main id="main">
                 <div class="movie">
                     <img src="https://source.unsplash.com/random/400x200/?wallpaper,landscape" alt="image">
@@ -35,6 +35,7 @@
                         <span class="green">9.8</span>
                     </div>
                     <div class="overview">
+                        <h3>Summary</h3>
                         Lorem Ipsums jfiosdjfodsjofi
                     </div>
                 </div>
@@ -45,6 +46,7 @@
                         <span class="green">9.8</span>
                     </div>
                     <div class="overview">
+                        <h3>Summary</h3>
                         Lorem Ipsums jfiosdjfodsjofi
                     </div>
                 </div>
@@ -55,17 +57,18 @@
                         <span class="green">9.8</span>
                     </div>
                     <div class="overview">
+                        <h3>Summary</h3>
                         Lorem Ipsums jfiosdjfodsjofi
                     </div>
                 </div>
             </main>
         <div class="container">
-            <h1>Simple POST Form</h1>
+            <!-- <h1>Simple POST Form</h1>
             <form>
                 <label for="usrinput">Movie Input:</label>
                 <input id="usrinput" type="string" name="movie">
                 <input type="submit" value="Look Up" id="searchButton">
-            </form>
+            </form>-->
             <ul class="result"></ul>
         </div>
         <% } else { %>

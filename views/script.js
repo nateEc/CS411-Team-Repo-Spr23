@@ -32,7 +32,7 @@
     let searchInput = document.querySelector("#usrinput");
     const query = searchInput.value;
     const SEARCH_URL = "https://api.themoviedb.org/3/search/movie?api_key=b9ab825c6c7df22351f2927746188d59&query=$%7Bquery%7D"
-    const API_KEY = "b9ab825c6c7df22351f2927746188d59"
+      const API_KEY = "b9ab825c6c7df22351f2927746188d59"
     const resultsList = document.querySelector(".result");
     console.log(API_KEY)
     console.log(SEARCH_URL)
