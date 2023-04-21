@@ -11,7 +11,7 @@ const app = express();
 
 // set view engine
 app.set('view engine', 'ejs');
-
+app.use(express.static(__dirname));
 // set up session cookies
 app.use(cookieSession({
     maxAge: 24 * 60 * 60 * 1000,
@@ -21,7 +21,6 @@ app.use(cookieSession({
 // initialize passport
 app.use(passport.initialize());
 app.use(passport.session());
-
 
 // connect to mongodb
 mongoose.connect(keys.mongodb.dbURI)
