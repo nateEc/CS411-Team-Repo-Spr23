@@ -1,4 +1,4 @@
-const API_KEY = require('../config/keys').youtube.API_KEY;
+const API_KEY = '';
 
 // Search for a video trailer based on a movie name
 async function searchTrailer(movieName) {
