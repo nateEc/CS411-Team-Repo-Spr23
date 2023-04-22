@@ -1,4 +1,4 @@
-const API_KEY = 'AIzaSyAea3b5J5hWm4nNH5HdJIc0CEylRUKEt_M';
+const API_KEY = require('../config/keys').youtube.API_KEY;
 
 // Search for a video trailer based on a movie name
 async function searchTrailer(movieName) {
@@ -19,7 +19,6 @@ async function searchTrailer(movieName) {
     
     // Construct the URL for the trailer video
     const trailerUrl = `https://www.youtube.com/watch?v=${videoId}`;
-    
     return trailerUrl;
   } catch (error) {
     console.error('An error occurred here: ', error);
@@ -30,9 +29,8 @@ async function searchTrailer(movieName) {
 
 export async function getTrailerUrl(movieName) {
   const trailerUrl = await searchTrailer(movieName);
-  // console.log(trailerUrl);
   return trailerUrl;
 }
 
 
-console.log(getTrailerUrl('The Matrix'));
+// console.log("THE TRAILER URL IS" + getTrailerUrl('The Matrix'));

@@ -54,6 +54,7 @@ function searchMovies(url) {
         for (const result of data.results.slice(0, 8)) {
           const { title, poster_path, vote_average, overview, id } = result;
           const trailerUrl = await getTrailerUrl(title);
+          console.log(trailerUrl);
           const card = createCardElement(title, IMG_URL + poster_path, vote_average, overview, trailerUrl, id);
           main.appendChild(card);
         }
