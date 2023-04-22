@@ -1,93 +1,116 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Login</title>
-        <style>
-            body{
-                font-family: arial;
-                margin: 0;
-                background: #7b7e9e;
-            }
-            nav{
-                background: #6067c2;
-                padding: 20px 10px;
-            }
-            nav ul{
-                max-width: 960px;
-                margin: 0 auto;
-                padding: 0;
-            }
-            nav li{
-                list-style-type: none;
-                display: inline-block;
-                margin: 0 10px 0 0;
-            }
-            nav a{
-                color: #fff;
-                font-size: 18px;
-                background: rgba(255,255,255,0.2);
-                text-decoration: none;
-                padding: 10px;
-                display: block;
-            }
-            main, header{
-                max-width: 960px;
-                margin: 30px auto;
-                padding: 0 10px;
-                color: #333;
-            }
-            .button {
-                display: inline-block;
-                padding: 12px 24px;
-                font-size: 16px;
-                font-weight: bold;
-                text-align: center;
-                text-decoration: none;
-                color: #FFFFFF;
-                background-color: #2E2E2E;
-                border-radius: 4px;
-                transition: all 0.2s ease-in-out;
-            }
-        
-            .button:hover {
-                background-color: #FFFFFF;
-                color: #2E2E2E;
-            }
-            
-            nav a {
-                color: #FFFFFF;
-                font-size: 18px;
-                text-decoration: none;
-                padding: 10px;
-                border-radius: 4px;
-                transition: all 0.2s ease-in-out;
-            }
-
-        nav a:hover {
-            background-color: #FFFFFF;
-            color: #2E2E2E;
-        }
-
-        </style>
-    </head>
-    <body>
-        <nav>
-            <ul>
-                <% if (user) { %>
-                <li><a href="/auth/logout">Log out</a></li>
-                <% } else { %>
-                <li><a href="/auth/login">Login</a></li>
-                <% } %>
-                <li><a href="/">Homepage</a></li>
-                <li><a href="/profile">Profile</a></li>
-            </ul>
-        </nav>
-        <header>
-            <h1>Login using...</h1>
-        </header>
-        <main>
-            <a class="google-btn" href="/auth/google">Google+</a>
-        </main>
-    </body>
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #7b7e9e;
+      }
+      nav {
+    background-color: #6067c2;
+    padding: 20px 10px;
+  }
+  
+  nav ul {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  nav li {
+    list-style-type: none;
+    margin-right: 10px;
+  }
+  
+  nav a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  nav a:hover {
+    background-color: #FFFFFF;
+    color: #2E2E2E;
+  }
+  
+  header {
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 0 10px;
+    color: #333;
+    text-align: center;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #2E2E2E;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+  }
+    
+  .button:hover {
+    background-color: #FFFFFF;
+    color: #2E2E2E;
+  }
+    
+  main {
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 0 10px;
+    text-align: center;
+  }
+    
+  .google-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #dd4b39;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+  }
+    
+  .google-btn:hover {
+    background-color: #FFFFFF;
+    color: #dd4b39;
+  }
+</style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <% if (user) { %>
+      <li><a href="/auth/logout">Log out</a></li>
+      <% } else { %>
+      <li><a href="/auth/login">Login</a></li>
+      <% } %>
+      <li><a href="/">Homepage</a></li>
+      <li><a href="/profile">Profile</a></li>
+    </ul>
+  </nav>
+  <header>
+    <h1>Login using...</h1>
+  </header>
+  <main>
+    <a class="google-btn" href="/auth/google">Google+</a>
+  </main>
+</body>
 </html>
