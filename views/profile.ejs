@@ -1,95 +1,100 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Homepage</title>
-        <style>
-            body{
-                font-family: arial;
-                margin: 0;
-                background: #7b7e9e;
-            }
-            nav{
-                background: #6067c2;
-                padding: 20px 10px;
-            }
-            nav ul{
-                max-width: 960px;
-                margin: 0 auto;
-                padding: 0;
-            }
-            nav li{
-                list-style-type: none;
-                display: inline-block;
-                margin: 0 10px 0 0;
-            }
-            nav a{
-                color: #fff;
-                font-size: 18px;
-                background: rgba(255,255,255,0.2);
-                text-decoration: none;
-                padding: 10px;
-                display: block;
-            }
-            main, header{
-                max-width: 960px;
-                margin: 30px auto;
-                padding: 0 10px;
-                color: #333;
-            }
-            .button {
-                display: inline-block;
-                padding: 12px 24px;
-                font-size: 16px;
-                font-weight: bold;
-                text-align: center;
-                text-decoration: none;
-                color: #FFFFFF;
-                background-color: #2E2E2E;
-                border-radius: 4px;
-                transition: all 0.2s ease-in-out;
-            }
-
-            .button:hover {
-                background-color: #FFFFFF;
-                color: #2E2E2E;
-            }
-
-            nav a {
-                color: #FFFFFF;
-                font-size: 18px;
-                text-decoration: none;
-                padding: 10px;
-                border-radius: 4px;
-                transition: all 0.2s ease-in-out;
-            }
-
-        nav a:hover {
-            background-color: #FFFFFF;
-            color: #2E2E2E;
-        }
-
-        </style>
-    </head>
-    <body>
-        <nav>
-            <ul>
-                <% if (user) { %>
-                <li><a href="/auth/logout">Log out</a></li>
-                <% } else { %>
-                <li><a href="/auth/login">Login</a></li>
-                <% } %>
-                <li><a href="/">Homepage</a></li>
-                <li><a href="/profile">Profile</a></li>
-            </ul>
-        </nav>
-        <header>
-            <h1>Welcome to your profile, <%= user.username %></h1>
-        </header>
-        <main>
-            <img src="<%= user.thumbnail %>" />
-            <p>This is your profile picture</p>
-            <p>Now you can navigate to Home page to search for movies!</p>
-        </main>
-    </body>
-</html>
+  <head>
+    <meta charset="utf-8">
+    <title>Homepage</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #7b7e9e;
+      }
+      nav {
+    background: #6067c2;
+    padding: 20px 10px;
+  }
+  
+  nav ul {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  
+  nav li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 0 10px 0 0;
+  }
+  
+  nav a {
+    color: #fff;
+    font-size: 18px;
+    background: rgba(255,255,255,0.2);
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  nav a:hover {
+    background-color: #FFFFFF;
+    color: #2E2E2E;
+  }
+  
+  header, main {
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 0 10px;
+    color: #333;
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #2E2E2E;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .button:hover {
+    background-color: #FFFFFF;
+    color: #2E2E2E;
+  }
+  
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+  }
+</style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <% if (user) { %>
+        <li><a href="/auth/logout">Log out</a></li>
+      <% } else { %>
+        <li><a href="/auth/login">Login</a></li>
+      <% } %>
+      <li><a href="/">Homepage</a></li>
+      <li><a href="/profile">Profile</a></li>
+    </ul>
+  </nav>
+  <header>
+    <h1>Welcome to your profile, <%= user.username %></h1>
+  </header>
+  
+  <main>
+    <img src="<%= user.thumbnail %>" alt="Profile Picture" />
+    <p>This is your profile picture.</p>
+    <p>Now you can navigate to the Home page to search for movies!</p>
+  </main>
+  
