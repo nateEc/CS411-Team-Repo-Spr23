@@ -10,7 +10,14 @@ const main = document.getElementById('main');
 const form =  document.getElementById('form');
 const search = document.getElementById('search');
 
-function createCardElement(title, posterUrl, rating, overview, trailerUrl, id) {
+async function makeUrl(title) {
+  console.log('button clicked');
+  const url = await getTrailerUrl(title)
+  console.log('the url is: '+ url);
+  window.open(url)
+}
+
+function createCardElement(title, posterUrl, rating, overview, id) {
     const card = document.createElement("div");
     card.className = "card";
   
@@ -38,7 +45,7 @@ function createCardElement(title, posterUrl, rating, overview, trailerUrl, id) {
     knowMoreButton.textContent = "Know More";
     knowMoreButton.className = "know-more";
     knowMoreButton.id = id;
-    knowMoreButton.onclick = () => window.open(trailerUrl);
+    knowMoreButton.onclick = () => makeUrl(title);
     cardBody.appendChild(knowMoreButton);
   
     return card;
@@ -53,9 +60,9 @@ function searchMovies(url) {
         main.innerHTML = '';
         for (const result of data.results.slice(0, 8)) {
           const { title, poster_path, vote_average, overview, id } = result;
-          const trailerUrl = await getTrailerUrl(title);
-          console.log(trailerUrl);
-          const card = createCardElement(title, IMG_URL + poster_path, vote_average, overview, trailerUrl, id);
+          // const trailerUrl = await getTrailerUrl(title);
+          // console.log(trailerUrl);
+          const card = createCardElement(title, IMG_URL + poster_path, vote_average, overview, id);
           main.appendChild(card);
         }
       })
