@@ -17,7 +17,7 @@ async function makeUrl(title) {
   window.open(url)
 }
 
-function createCardElement(title, posterUrl, rating, overview, id) {
+function createCardElement(title, posterUrl, rating, overview, id, isFavorite) {
     const card = document.createElement("div");
     card.className = "card";
   
@@ -47,6 +47,17 @@ function createCardElement(title, posterUrl, rating, overview, id) {
     knowMoreButton.id = id;
     knowMoreButton.onclick = () => makeUrl(title);
     cardBody.appendChild(knowMoreButton);
+
+    const favoriteButton = document.createElement("button");
+    favoriteButton.textContent = card.isFavorite ? "Remove from Favorites" : "Add to Favorites";
+    favoriteButton.className = "favorite";
+    favoriteButton.id = id;
+    favoriteButton.onclick = () => {
+      card.isFavorite = !card.isFavorite;
+      favoriteButton.textContent = card.isFavorite ? "Remove from Favorites" : "Add to Favorites";
+      console.log(`The movie ${title} has a favorite status of ${card.isFavorite}`);
+    };
+    cardBody.appendChild(favoriteButton);
   
     return card;
   }
@@ -62,7 +73,7 @@ function searchMovies(url) {
           const { title, poster_path, vote_average, overview, id } = result;
           // const trailerUrl = await getTrailerUrl(title);
           // console.log(trailerUrl);
-          const card = createCardElement(title, IMG_URL + poster_path, vote_average, overview, id);
+          const card = createCardElement(title, IMG_URL + poster_path, vote_average, overview, id, false);
           main.appendChild(card);
         }
       })
