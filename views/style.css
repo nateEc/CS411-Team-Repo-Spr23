@@ -199,6 +199,10 @@ nav a:hover {
     margin: 10px 0;
 }
 
+.card:hover {
+    transform: scale(1.05);
+}
+
 /*.card-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
