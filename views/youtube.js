@@ -1,4 +1,4 @@
-const API_KEY = '';
+const API_KEY = 'AIzaSyDy3XC7XTNTgK2nlK2_ZvnQwnv2mErkFfo';
 
 // Search for a video trailer based on a movie name
 async function searchTrailer(movieName) {

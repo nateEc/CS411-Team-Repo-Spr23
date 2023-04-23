@@ -36,11 +36,7 @@ function createCardElement(title, posterUrl, rating, overview, id, isFavorite) {
     cardTitle.className = "card-title";
     cardBody.appendChild(cardTitle);
   
-    const cardText = document.createElement("p");
-    cardText.textContent = `Rating: ${rating}\nSummary: ${overview}`;
-    cardText.className = "card-summary";
-    cardBody.appendChild(cardText);
-  
+    
     const knowMoreButton = document.createElement("button");
     knowMoreButton.textContent = "Know More";
     knowMoreButton.className = "know-more";
