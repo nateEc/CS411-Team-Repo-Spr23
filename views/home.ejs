@@ -21,6 +21,9 @@
                         <label for="usrinput">Movie Input:</label>
                         <input id="usrinput" type="text" name="movie" placeholder="Search">
                         <input type="submit" value="Look Up" id="searchButton">
+                        <% if (user) { %>
+                        <input type="hidden" id="userId" value="<%= user.googleId %>">
+                        <% } %>
                     </form>
                     <% } else { %>
                     <% } %>
@@ -75,6 +78,7 @@
         </div>
         <% } else { %>
         <% } %>
+    <script>const userId = '<%= user.googleId %>';</script>
     <script src="/views/script.js" type="module"></script>
     <script src="/views/youtube.js" type="module"></script>
     </body>
