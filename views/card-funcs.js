@@ -1,18 +1,18 @@
 export { createCardElement, userFavorites, fetchUserFavorites };
 
-
 async function handleFavoriteButtonClick(card, favoriteButton, id, title) {
   card.isFavorite = !card.isFavorite;
   favoriteButton.textContent = card.isFavorite ? "Remove from Favorites" : "Add to Favorites";
 
   try {
-    const response = await fetch(`/api/favorites/${userId}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ movieId: id, isFavorite: card.isFavorite })
-    });
+      const response = await fetch(`/api/favorites/${userId}`, {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ movieId: id, isFavorite: card.isFavorite })
+      });
+
 
     if (response.ok) {
       console.log(`The movie ${title} has a favorite status of ${card.isFavorite}`);

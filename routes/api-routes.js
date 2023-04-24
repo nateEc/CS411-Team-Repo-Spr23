@@ -24,6 +24,7 @@ router.post('/favorites/:userId', async (req, res) => {
     res.status(500).json({ message: 'An error occurred while updating user favorites' });
   }
 });
+
 router.get('/favorites/:userId', async (req, res) => {
   const { userId } = req.params;
 
