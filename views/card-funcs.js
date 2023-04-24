@@ -23,6 +23,7 @@ async function handleFavoriteButtonClick(card, favoriteButton, id, title) {
     console.error('Error making request to update user favorites:', error);
   }
 }
+
 function createCardElement(title, posterUrl, rating, overview, id, isFavorite) {
     const movieIsFavorite = userFavorites.includes(id.toString());
 
@@ -74,4 +75,3 @@ async function fetchUserFavorites(userId) {
     console.error('Error fetching user favorites:', error);
   }
 }
-fetchUserFavorites();
