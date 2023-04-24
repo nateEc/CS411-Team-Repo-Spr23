@@ -1,6 +1,28 @@
 export { createCardElement, userFavorites, fetchUserFavorites };
-const userId = '<%= user.googleId %>';
 
+
+async function handleFavoriteButtonClick(card, favoriteButton, id, title) {
+  card.isFavorite = !card.isFavorite;
+  favoriteButton.textContent = card.isFavorite ? "Remove from Favorites" : "Add to Favorites";
+
+  try {
+    const response = await fetch(`/api/favorites/${userId}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ movieId: id, isFavorite: card.isFavorite })
+    });
+
+    if (response.ok) {
+      console.log(`The movie ${title} has a favorite status of ${card.isFavorite}`);
+    } else {
+      console.error('Error updating user favorites');
+    }
+  } catch (error) {
+    console.error('Error making request to update user favorites:', error);
+  }
+}
 function createCardElement(title, posterUrl, rating, overview, id, isFavorite) {
     const movieIsFavorite = userFavorites.includes(id.toString());
 
@@ -43,7 +65,7 @@ function createCardElement(title, posterUrl, rating, overview, id, isFavorite) {
   }
 
 let userFavorites = [];
-async function fetchUserFavorites() {
+async function fetchUserFavorites(userId) {
   try {
     const response = await fetch(`/api/favorites/${userId}`);
     const data = await response.json();
