@@ -96,5 +96,14 @@
     <img src="<%= user.thumbnail %>" alt="Profile Picture" />
     <p>This is your profile picture.</p>
     <p>Now you can navigate to the Home page to search for movies!</p>
-    <div></div>
+    <div id="favorite-movies-container">
+      <h2>Your Favorite Movies:</h2>
+      <div id="favorite-movies"></div>
+    </div>
   </main>
+
+  <!--<script>const userId = '<%= user.googleId %>';</script>-->
+
+  <script type="module" src="/views/card-funcs.js"></script>
+  <script type="module" src="/views/profile.js"></script>
+</body>
