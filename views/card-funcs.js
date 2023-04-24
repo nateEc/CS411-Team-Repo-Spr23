@@ -1,4 +1,4 @@
-export { createCardElement, userFavorites, fetchUserFavorites };
+export { createCardElement, userFavorites, fetchUserFavorites, fetchMovieDetailsById };
 
 async function handleFavoriteButtonClick(card, favoriteButton, id, title) {
   card.isFavorite = !card.isFavorite;
@@ -25,7 +25,14 @@ async function handleFavoriteButtonClick(card, favoriteButton, id, title) {
 }
 
 function createCardElement(title, posterUrl, rating, overview, id, isFavorite) {
-    const movieIsFavorite = userFavorites.includes(id.toString());
+    if (id === undefined) {
+        console.error('Undefined movie ID:', id);
+        return;
+    }
+    const movieIsFavorite = userFavorites
+          .filter(favorite => favorite !== undefined)
+          .map(String)
+          .includes(id.toString());
 
     const card = document.createElement("div");
     card.className = "card";
@@ -73,5 +80,35 @@ async function fetchUserFavorites(userId) {
     userFavorites = data.favoriteMovies;
   } catch (error) {
     console.error('Error fetching user favorites:', error);
+  }
+}
+// let userFavorites = [];
+
+// async function fetchUserFavorites(userId) {
+//   console.log("fetchUserFavorites called, userId:", userId); // Add this line
+//   if (!userId) return;
+//   try {
+//     const response = await fetch(`/api/favorites/${userId}`);
+//     const data = await response.json();
+//     console.log("fetchUserFavorites called, data received:", data); // Add this line
+//     userFavorites = data.favoriteMovies;
+//     displayFavoriteMovies(userFavorites);
+//   } catch (error) {
+//     console.error('Error fetching user favorites:', error);
+//   }
+// }
+
+//will need to change the api key to somewhere protected !!!!!!!!!!!!!!!!!!!!!!
+const API_KEY = "api_key=b9ab825c6c7df22351f2927746188d59";
+const BASE_URL = 'https://api.themoviedb.org/3';
+//fetch unique movie by id
+async function fetchMovieDetailsById(movieId) {
+  try {
+    const response = await fetch(`${BASE_URL}/movie/${movieId}?${API_KEY}&language=en-US`);
+    const movie = await response.json();
+    return movie;
+  } catch (error) {
+    console.error('Error fetching movie details by ID:', error);
+    return null;
   }
 }

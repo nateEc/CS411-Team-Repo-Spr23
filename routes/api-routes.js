@@ -5,6 +5,11 @@ router.post('/favorites/:userId', async (req, res) => {
   const { userId } = req.params;
   const { movieId, isFavorite } = req.body;
 
+  if (!movieId) {
+    res.status(400).json({ message: 'Movie ID is required' });
+    return;
+  }
+
   try {
     if (isFavorite) {
       await User.findOneAndUpdate(

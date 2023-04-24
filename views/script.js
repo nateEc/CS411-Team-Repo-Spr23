@@ -21,7 +21,6 @@ async function makeUrl(title) {
   window.open(url)
 }
 
-
 function searchMovies(url) {
     const resultsList = document.querySelector(".result");
     fetch(url)
