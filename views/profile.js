@@ -1,4 +1,4 @@
-import { createCardElement, userFavorites, fetchUserFavorites, fetchMovieDetailsById } from './card-funcs.js';
+import { createCardElement, handleFavoriteButtonClick, userFavorites, fetchUserFavorites, fetchMovieDetailsById } from './card-funcs.js';
 
 const mainElement = document.querySelector("main");
 const favoritesContainer = document.getElementById("favorite-movies");
@@ -20,6 +20,37 @@ async function displayFavoriteMovies(favoriteMovies) {
     const { title, poster_path, vote_average, overview } = movieData;
     const card = createCardElement(title, IMG_URL + poster_path, vote_average, overview, movieId, true);
     favoritesContainer.appendChild(card);
+
+    const favoriteButton = card.querySelector(".favorite-button-profile");
+    favoriteButton.addEventListener("click", async (event) => {
+      event.preventDefault();
+      const userIdElement = document.getElementById("userId");
+      if (userIdElement) {
+        const userId = userIdElement.value;
+        // await handleFavoriteButtonClick(card, favoriteButton, movieId, title);
+
+        try {
+            const response = await fetch(`/api/favorites/${userId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ movieId: id, isFavorite: false })
+            });
+
+
+            if (response.ok) {
+                console.log(`The movie ${title} has a favorite status of ${card.isFavorite}`);
+            } else {
+                console.error('Error updating user favorites');
+            }
+        } catch (error) {
+            console.error('Error making request to update user favorites:', error);
+        }
+        await fetchUserFavorites(userId);
+        card.remove();
+      }
+    });
   }
 }
 document.addEventListener("DOMContentLoaded", async function call() {

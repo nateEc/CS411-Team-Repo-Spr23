@@ -1,4 +1,4 @@
-export { createCardElement, userFavorites, fetchUserFavorites, fetchMovieDetailsById };
+export { createCardElement, handleFavoriteButtonClick, userFavorites, fetchUserFavorites, fetchMovieDetailsById };
 
 async function handleFavoriteButtonClick(card, favoriteButton, id, title) {
   card.isFavorite = !card.isFavorite;
@@ -67,6 +67,11 @@ function createCardElement(title, posterUrl, rating, overview, id, isFavorite) {
     favoriteButton.onclick = () => {
       handleFavoriteButtonClick(card, favoriteButton, id, title);
     };
+    favoriteButton.classList.add("favorite-button");
+    if (isFavorite) {
+        favoriteButton.classList.add("favorite-button-profile");
+    }
+
     cardBody.appendChild(favoriteButton);
 
     return card;
@@ -82,21 +87,6 @@ async function fetchUserFavorites(userId) {
     console.error('Error fetching user favorites:', error);
   }
 }
-// let userFavorites = [];
-
-// async function fetchUserFavorites(userId) {
-//   console.log("fetchUserFavorites called, userId:", userId); // Add this line
-//   if (!userId) return;
-//   try {
-//     const response = await fetch(`/api/favorites/${userId}`);
-//     const data = await response.json();
-//     console.log("fetchUserFavorites called, data received:", data); // Add this line
-//     userFavorites = data.favoriteMovies;
-//     displayFavoriteMovies(userFavorites);
-//   } catch (error) {
-//     console.error('Error fetching user favorites:', error);
-//   }
-// }
 
 //will need to change the api key to somewhere protected !!!!!!!!!!!!!!!!!!!!!!
 const API_KEY = "api_key=b9ab825c6c7df22351f2927746188d59";
