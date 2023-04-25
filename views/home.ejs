@@ -78,6 +78,8 @@
         </div>
         <% } else { %>
         <% } %>
+        <script>const userId = '<%= user ? user.googleId : null %>';</script>
+
 
     <script src="/views/card-funcs.js" type="module"></script>
     <script src="/views/script.js" type="module"></script>

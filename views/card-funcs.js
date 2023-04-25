@@ -1,6 +1,10 @@
 export { createCardElement, handleFavoriteButtonClick, userFavorites, fetchUserFavorites, fetchMovieDetailsById };
+import {getTrailerUrl} from './youtube.js';
 
-async function handleFavoriteButtonClick(card, favoriteButton, id, title) {
+async function handleFavoriteButtonClick(event, card, favoriteButton, id, title, callback) {
+  if (callback) {
+    event.preventDefault();
+  }
   card.isFavorite = !card.isFavorite;
   favoriteButton.textContent = card.isFavorite ? "Remove from Favorites" : "Add to Favorites";
 
@@ -12,8 +16,6 @@ async function handleFavoriteButtonClick(card, favoriteButton, id, title) {
           },
           body: JSON.stringify({ movieId: id, isFavorite: card.isFavorite })
       });
-
-
     if (response.ok) {
       console.log(`The movie ${title} has a favorite status of ${card.isFavorite}`);
     } else {
@@ -22,9 +24,22 @@ async function handleFavoriteButtonClick(card, favoriteButton, id, title) {
   } catch (error) {
     console.error('Error making request to update user favorites:', error);
   }
+  if (callback) {
+    callback(card.isFavorite);
+    console.log('callback');
+  } else {
+    console.log('null callback');
+  }
 }
 
-function createCardElement(title, posterUrl, rating, overview, id, isFavorite) {
+async function makeUrl(title) {
+  console.log('button clicked');
+  const url = await getTrailerUrl(title)
+  console.log('the url is: '+ url);
+  window.open(url)
+}
+
+function createCardElement(title, posterUrl, rating, overview, id, isFavorite, handleClick) {
     if (id === undefined) {
         console.error('Undefined movie ID:', id);
         return;
@@ -61,17 +76,16 @@ function createCardElement(title, posterUrl, rating, overview, id, isFavorite) {
     cardBody.appendChild(knowMoreButton);
 
     const favoriteButton = document.createElement("button");
-    favoriteButton.textContent = card.isFavorite ? "Remove from Favorites" : "Add to Favorites";
-    favoriteButton.className = "favorite";
-    favoriteButton.id = id;
-    favoriteButton.onclick = () => {
-      handleFavoriteButtonClick(card, favoriteButton, id, title);
-    };
     favoriteButton.classList.add("favorite-button");
     if (isFavorite) {
         favoriteButton.classList.add("favorite-button-profile");
     }
+    favoriteButton.textContent = card.isFavorite ? "Remove from Favorites" : "Add to Favorites";
+    favoriteButton.id = id;
 
+    favoriteButton.onclick = (event) => {
+      handleFavoriteButtonClick(event, card, favoriteButton, id, title, handleClick);
+    };
     cardBody.appendChild(favoriteButton);
 
     return card;
