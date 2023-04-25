@@ -92,9 +92,19 @@
     <h1>Welcome to your profile, <%= user.username %></h1>
   </header>
   
-  <main>
+  <main data-user-id="<%= user.googleId %>">
     <img src="<%= user.thumbnail %>" alt="Profile Picture" />
     <p>This is your profile picture.</p>
     <p>Now you can navigate to the Home page to search for movies!</p>
+    <div id="favorite-movies-container" data-user-id="<%= user.googleId %>">
+      <h2>Your Favorite Movies:</h2>
+      <div id="favorites"></div>
+    </div>
   </main>
-  
+
+  <!--<script>const userId = '<%= user.googleId %>';</script>-->
+  <input type="hidden" id="userId" value="<%= user.googleId %>">
+  <script> const userId = '<%= user.googleId %>'; </script>
+
+  <script type="module" src="/views/profile.js"></script>
+</body>
