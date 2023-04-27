@@ -1,6 +1,21 @@
-Basic Structure for the application with google oauth feature done
+# 411
 
-To Run:
+Team 2 of LabB3 
 
-node app.js (or node prototype/project/bin/www to access prototype)
-then run localhost:3000 in a new brower
+## Movie Search And Trailer 
+ - Web app that 
+ 
+## Video Demo
+watch video demo [here]()
+ 
+## To Start 
+Set up google Oauth Client ID and Secret
+And install all dependencies running
+```
+npm install
+```
+ 
+## To run the WEB APP
+```
+Node app.js (or node prototype/project/bin/www to access prototype)
+```
