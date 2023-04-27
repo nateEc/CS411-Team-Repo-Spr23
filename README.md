@@ -9,8 +9,8 @@ Team 2 of LabB3
 watch video demo [here]()
  
 ## To Start 
-Set up google Oauth Client ID and Secret
-And install all dependencies running
+Set up google Oauth Client ID and Secret, MongoDB connection String
+And install all the dependencies running
 ```
 npm install
 ```
