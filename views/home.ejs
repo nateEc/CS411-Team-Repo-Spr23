@@ -29,8 +29,12 @@
                     <% } %>
             </ul>
         </nav>
-        <h1> Log in to search for the movies you want!
-        </h1>
+        <!-- Only showing logging suggestion for users when not Logged In-->
+        <% if (user) { %>
+            <% } else { %>
+                <h1> Log in to search for the movies you want!
+                </h1>
+            <% } %>
         <% if (user) { %>
             <main id="main">
                 <div class="movie">
