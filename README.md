@@ -3,7 +3,7 @@
 Team 2 of LabB3 
 
 ## Movie Search And Trailer 
- - Web app that 
+ - Web application that allows users to securely log in using Google OAuthentication and search for movies. Users are able to search for movies using the title and are presented with a list of popular movies matching this title. Users are able to directly view the movie trailer for that movie on Youtube by clicking the know more button. The application also allows users to favorite a movie to add to their list of favorited movies, which persists through different login sessions.
  
 ## Video Demo
 watch video demo [here]()
@@ -17,5 +17,5 @@ npm install
  
 ## To run the WEB APP
 ```
-Node app.js (or node prototype/project/bin/www to access prototype)
+node app.js (or node prototype/project/bin/www to access prototype)
 ```
