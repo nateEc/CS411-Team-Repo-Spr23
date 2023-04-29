@@ -1,3 +1,4 @@
+import {BASE_URL, API_KEY} from './script.js';
 export { createCardElement, handleFavoriteButtonClick, userFavorites, fetchUserFavorites, fetchMovieDetailsById };
 import {getTrailerUrl} from './youtube.js';
 export default { createCardElement, fetchUserFavorites };
@@ -103,9 +104,6 @@ async function fetchUserFavorites(userId) {
   }
 }
 
-//will need to change the api key to somewhere protected !!!!!!!!!!!!!!!!!!!!!!
-const API_KEY = "api_key=b9ab825c6c7df22351f2927746188d59";
-const BASE_URL = 'https://api.themoviedb.org/3';
 //fetch unique movie by id
 async function fetchMovieDetailsById(movieId) {
   try {

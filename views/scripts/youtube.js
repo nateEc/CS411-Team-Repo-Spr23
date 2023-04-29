@@ -1,4 +1,5 @@
-const API_KEY = 'AIzaSyDy3XC7XTNTgK2nlK2_ZvnQwnv2mErkFfo';
+import {YOUTUBE_API} from "../../config/config.js";
+const YOUTUBE_API_KEY = "api_key="+YOUTUBE_API;
 
 // Search for a video trailer based on a movie name
 async function searchTrailer(movieName) {
@@ -8,7 +9,7 @@ async function searchTrailer(movieName) {
     const encodedMovieName = encodeURIComponent(`${movieName} trailer`);
     
     // Construct the API request URL
-    const url = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&q=${encodedMovieName}&type=video&part=snippet&maxResults=1`;
+    const url = `https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&q=${encodedMovieName}&type=video&part=snippet&maxResults=1`;
     
     // Make the API request
     const response = await fetch(url);
