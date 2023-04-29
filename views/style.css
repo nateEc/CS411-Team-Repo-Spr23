@@ -174,7 +174,6 @@ nav a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* overflow: scroll; */
     width: 100%;
     height: 40%;
     padding: 10px;
@@ -189,26 +188,7 @@ nav a:hover {
     text-align: center;
     margin: 10px 0;
 }
-/*
-.card-summary {
-    font-size: 14px;
-    text-align: left;
-    line-height: 1.5;
-    max-height: 6em;
-    overflow: scroll;
-    text-overflow: ellipsis;
-    overflow-scrolling: auto;
-    white-space: pre-wrap;
-    margin: 10px 0;
-}
-*/
 .card:hover {
     transform: scale(1.05);
 }
 
-/*.card-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, auto);
-    gap: 20px;
-}*/

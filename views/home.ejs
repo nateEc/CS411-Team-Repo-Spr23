@@ -38,56 +38,18 @@
             <% } %>
         <% if (user) { %>
             <main id="main">
-                <div class="movie">
-                    <img src="https://source.unsplash.com/random/400x200/?wallpaper,landscape" alt="image">
-                    <div class="movie-info">
-                        <h3>Movie Title</h3>
-                        <span class="green">9.8</span>
-                    </div>
-                    <div class="overview">
-                        <h3>Summary</h3>
-                        Lorem Ipsums jfiosdjfodsjofi
-                    </div>
-                </div>
-                <div class="movie">
-                    <img src="https://source.unsplash.com/random/400x200/?wallpaper,landscape" alt="image">
-                    <div class="movie-info">
-                        <h3>Movie Title 2</h3>
-                        <span class="green">9.8</span>
-                    </div>
-                    <div class="overview">
-                        <h3>Summary</h3>
-                        Lorem Ipsums jfiosdjfodsjofi
-                    </div>
-                </div>
-                <div class="movie">
-                    <img src="https://source.unsplash.com/random/400x200/?wallpaper,landscape" alt="image">
-                    <div class="movie-info">
-                        <h3>Movie Title 3</h3>
-                        <span class="green">9.8</span>
-                    </div>
-                    <div class="overview">
-                        <h3>Summary</h3>
-                        Lorem Ipsums jfiosdjfodsjofi
-                    </div>
-                </div>
+                    <h2>Search Up Your Favorite Movies!</h2>
             </main>
         <div class="container">
-            <!-- <h1>Simple POST Form</h1>
-            <form>
-                <label for="usrinput">Movie Input:</label>
-                <input id="usrinput" type="string" name="movie">
-                <input type="submit" value="Look Up" id="searchButton">
-            </form>-->
             <ul class="result"></ul>
         </div>
         <% } else { %>
         <% } %>
         <script>const userId = '<%= user ? user.googleId : null %>';</script>
 
-
     <script src="/views/scripts/card-funcs.js" type="module"></script>
     <script src="/views/scripts/script.js" type="module"></script>
     <script src="/views/scripts/youtube.js" type="module"></script>
+
     </body>
 </html>

@@ -18,6 +18,7 @@ app.use(cookieSession({
     maxAge: 24 * 60 * 60 * 1000,
     keys: [keys.session.cookieKey]
 }));
+app.use(express.static('public', { "Content-Type": "application/javascript" }));
 
 // initialize passport
 app.use(passport.initialize());

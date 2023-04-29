@@ -1,5 +1,6 @@
 export { createCardElement, handleFavoriteButtonClick, userFavorites, fetchUserFavorites, fetchMovieDetailsById };
 import {getTrailerUrl} from './youtube.js';
+export default { createCardElement, fetchUserFavorites };
 
 async function handleFavoriteButtonClick(event, card, favoriteButton, id, title, callback) {
   if (callback) {
