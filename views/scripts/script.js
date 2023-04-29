@@ -1,6 +1,5 @@
 import {MY_API_KEY} from "../../config/config.js";
 const API_KEY = "api_key="+MY_API_KEY;
-//const API_KEY = "api_key=b9ab825c6c7df22351f2927746188d59";
 const BASE_URL = 'https://api.themoviedb.org/3';
 const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&'+API_KEY;
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
