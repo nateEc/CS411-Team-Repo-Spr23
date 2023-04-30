@@ -1,5 +1,6 @@
-import {YOUTUBE_API} from "../../config/config.js";
-const YOUTUBE_API_KEY = YOUTUBE_API;
+//import {YOUTUBE_API} from "../../config/config.js";
+//export const YOUTUBE_API_KEY = YOUTUBE_API;
+const YOUTUBE_API_KEY = config.YOUTUBE_API;
 
 // Search for a video trailer based on a movie name
 async function searchTrailer(movieName) {
