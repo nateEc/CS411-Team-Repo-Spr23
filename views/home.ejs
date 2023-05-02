@@ -38,24 +38,19 @@
             <% } %>
         <% if (user) { %>
             <main id="main">
-                <h2>Search Up Your Favorite Movies!</h2>
+                    <h2>Search Up Your Favorite Movies!</h2>
             </main>
         <div class="container">
-            <!-- <h1>Simple POST Form</h1>
-            <form>
-                <label for="usrinput">Movie Input:</label>
-                <input id="usrinput" type="string" name="movie">
-                <input type="submit" value="Look Up" id="searchButton">
-            </form>-->
             <ul class="result"></ul>
         </div>
         <% } else { %>
         <% } %>
         <script>const userId = '<%= user ? user.googleId : null %>';</script>
 
-
     <script src="/views/scripts/card-funcs.js" type="module"></script>
     <script src="/views/scripts/script.js" type="module"></script>
     <script src="/views/scripts/youtube.js" type="module"></script>
+        <script type='text/javascript' src='/config/config.js'></script>
+
     </body>
 </html>

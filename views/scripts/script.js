@@ -1,10 +1,13 @@
-const API_KEY = "api_key=b9ab825c6c7df22351f2927746188d59";
-const BASE_URL = 'https://api.themoviedb.org/3';
+//import {TMDB_API} from "../../config/config.js";
+const tmdbkey = config.TMDB_API;
+export const API_KEY = "api_key="+tmdbkey;
+export const BASE_URL = 'https://api.themoviedb.org/3';
 const API_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&'+API_KEY;
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const SEARCH_URL = BASE_URL + '/search/movie?'+API_KEY;
-import { createCardElement, userFavorites, fetchUserFavorites } from './card-funcs.js';
+const POP_URL = BASE_URL + '/movie/popular?'+API_KEY;
 
+import { createCardElement, userFavorites, fetchUserFavorites } from './card-funcs.js';
 
 const main = document.getElementById('main');
 const form =  document.getElementById('form');
@@ -12,7 +15,6 @@ const search = document.getElementById('search');
 
 const userId = document.getElementById('userId') ? document.getElementById('userId').value : null;
 await fetchUserFavorites(userId);
-
 
 function searchMovies(url) {
     const resultsList = document.querySelector(".result");
