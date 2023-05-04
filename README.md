@@ -12,10 +12,13 @@ watch video demo [here]()
 Set up google Oauth Client ID and Secret, MongoDB connection String
 And install all the dependencies running
 ```
-npm install
+run 'npm install' in your local terminal
 ```
  
 ## To run the WEB APP
 ```
-node app.js (or node prototype/project/bin/www to access prototype)
+run 'node app.js' in your local terminal
+Open webpage with 'http://localhost:3000/' URL to access webapp
+Log-in to search up your favorite movies!
+
 ```
