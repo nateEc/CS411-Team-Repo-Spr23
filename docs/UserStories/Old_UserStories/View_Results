@@ -1,0 +1,16 @@
+Having completed a quiz, I want to view my quiz results to see which movies are recommended for me based on my personality traits.
+I want the site to present my recommended movies visually and, because I do not want recommendations that I can’t use, allow me to
+remove a movie if I have seen it or don't like the suggestion. After removing a movie, I want it to be replaced by a new recommendation
+instead. When I am happy with the recommendations, I want to be immediately redirected back to my account overview page so that I can
+continue using the site.
+
+Upon the completion of a quiz (New Quiz), a user is greeted with the results of the quiz. These results will be presented as a set of
+5 top recommendations of movies, which are visually presented to the user. The user at this point will have the ability to select and
+remove a title in the set if they have seen or don’t like the suggestion, by simply clicking a relevant button. From this point a user
+will be expected to continue back to the dashboard. The results from the recent quiz will be transferred to the old results section of
+the home page. Upon the completion of a quiz (New Quiz), a user is greeted with the results of the quiz.
+These results will be presented as a set of 5 top recommendations of movies, which are visually presented to the user.
+The user at this point will have the ability to select and remove a title in the set if they have seen or don’t like the suggestion,
+by simply clicking a relevant button.
+From this point a user will be expected to continue back to the account overview.
+The results from the recent quiz will be transferred to the old results section of the home page.

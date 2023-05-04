@@ -38,3 +38,15 @@ Movie Trait Personality Test: https://app.traitify.com/developer/movies
 Movie Database: https://www.themoviedb.org/documentation/api 
  <br>
 Movie Recs to Other Recs: https://tastedive.com/read/api 
+
+## Final Project Idea
+### Favorite Movie Database and Search
+Users can look up any of their favorite movies using the TMDB api and add these movies to their favorites, which they can access on their profile page.
+
+In the search page or going to their store favorite movies, they can get access to some of that movie's information and be redirected to the trailer of that movie, using Youtube's api.
+
+### Apis
+<br>
+Movie Database: https://www.themoviedb.org/documentation/api
+<br>
+Youtube: https://developers.google.com/youtube/v3/
