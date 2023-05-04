@@ -1,5 +1,6 @@
-//import {YOUTUBE_API} from "../../config/config.js";
+// import {config} from "../../config/config";
 //export const YOUTUBE_API_KEY = YOUTUBE_API;
+import {config} from "../../config/config.js";
 const YOUTUBE_API_KEY = config.YOUTUBE_API;
 
 // Search for a video trailer based on a movie name

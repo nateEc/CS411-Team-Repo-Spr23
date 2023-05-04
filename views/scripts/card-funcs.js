@@ -92,9 +92,9 @@ function createCardElement(title, posterUrl, rating, overview, id, isFavorite, h
 
     return card;
   }
-
 let userFavorites = [];
 async function fetchUserFavorites(userId) {
+  let userFavorites = [];
   try {
     const response = await fetch(`/api/favorites/${userId}`);
     const data = await response.json();

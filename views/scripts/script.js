@@ -1,4 +1,5 @@
 //import {TMDB_API} from "../../config/config.js";
+import {config} from "../../config/config.js";
 const tmdbkey = config.TMDB_API;
 export const API_KEY = "api_key="+tmdbkey;
 export const BASE_URL = 'https://api.themoviedb.org/3';
@@ -43,7 +44,9 @@ function getColor(vote) {
 }
 
     let searchButton = document.querySelector("input[type='submit']");
+    if (searchButton != null) {
     searchButton.addEventListener("click", (event) => {
+      console.log("search button clicked");
       event.preventDefault();
       let searchInput = document.querySelector("#usrinput");
       const query = searchInput.value;
@@ -51,4 +54,6 @@ function getColor(vote) {
       console.log(SEARCH_URL);
       const url = SEARCH_URL+'&query='+query;
       searchMovies(url);
-});
+    });
+  }
+  
